@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from article.db_helpers import article_list, article_create, article_detail, article_update, article_delete
 from article.models import ArticleIn, ArticleInDB, ArticleUpdateIn
 
+
 router = APIRouter()
 
 
