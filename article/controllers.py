@@ -7,10 +7,10 @@ from article.db_helpers import article_list, article_create, article_detail, art
 from article.models import ArticleIn, ArticleInDB, ArticleUpdateIn
 
 
-router = APIRouter()
+router = APIRouter(tags=["Article CRUD"])
 
 
-@router.get("", response_model=list[ArticleInDB])
+@router.get("", response_model=List[ArticleInDB])
 def article_list_controller():
     result = article_list()
     return result
@@ -18,7 +18,7 @@ def article_list_controller():
 
 @router.post("", response_model=ArticleInDB, status_code=201)
 def article_create_controller(article_in: ArticleIn):
-    article = article_create(article_in)
+    article = article_create(article_in.dict())
     return JSONResponse(article, status_code=201)
 
 

@@ -22,9 +22,8 @@ def article_list(query=None):
 
 
 def article_create(article_in):
-    data_dict = article_in.__dict__
-    data_dict["created_at"] = datetime.now()
-    article_id = ArticleCollection.insert_one(data_dict).inserted_id
+    article_in["created_at"] = datetime.now()
+    article_id = ArticleCollection.insert_one(article_in).inserted_id
     article = ArticleCollection.find_one({"_id": article_id})
     return article_helper(article)
 
