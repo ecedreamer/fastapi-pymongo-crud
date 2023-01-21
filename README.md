@@ -36,4 +36,4 @@ $ python server.py
 ```
 
 #### View the API Docs ####
-Go to your browser and open http://127.0.0.1:5000/docs 
+Go to your browser and open http://127.0.0.1:8000/docs 
