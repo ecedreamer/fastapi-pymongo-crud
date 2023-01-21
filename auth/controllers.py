@@ -38,7 +38,7 @@ def login(credentials: LoginForm):
 
 
 @router.get("/profile")
-def profile(user: str = Depends(employee_required)):
+async def profile(user: str = Depends(employee_required)):
     if user.get("status") == "failure":
         return JSONResponse(user, status_code=403)
     return JSONResponse(user)

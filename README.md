@@ -1,5 +1,11 @@
 ## FastAPI Mongo(pymongo) DB CRUD Application ##
 
+### Project Description ###
+This is a basic backend API server project made using [FastAPI framework](https://fastapi.tiangolo.com). The project is built for education and demonstration purpose.
+- It uses FastAPI framework which is considered one of the fastest Python web framework to build web api. 
+- The project uses Mongo Db and pymongo is used as driver for database.
+- The project also has JWT based authentication
+
 #### Pre requisites ####
 - you must have preinstalled python3 preferably (3.8+) in your machine
 - you must have running mongo db server on the localhost port 27017.
