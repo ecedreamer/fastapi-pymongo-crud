@@ -1,7 +1,6 @@
 from main.db_config import collections
 from datetime import datetime
 from bson.objectid import ObjectId
-import pymongo
 
 
 ArticleCollection = collections.get("articles")
@@ -15,8 +14,7 @@ def article_helper(article):
 
 
 def article_list(query=None):
-    articles = ArticleCollection.find()
-    print(articles)
+    articles = ArticleCollection.find().sort(query.get("sort") if query.get("sort") else "created_at")
     articles_in_db = [article_helper(article) for article in articles]
     return articles_in_db
 
@@ -40,7 +38,6 @@ def article_update(object_id, data):
         if update_status.matched_count <= 0:
             return {"status": "failure", "message": "Article could not be found."}
         if update_status.modified_count > 0:
-            print("Data modified successfully.")
             article = ArticleCollection.find_one({"_id": ObjectId(object_id)})
             return article_helper(article)
         else:

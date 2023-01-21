@@ -1,4 +1,3 @@
-from datetime import datetime
 from typing import List
 
 from fastapi import APIRouter
@@ -11,8 +10,11 @@ router = APIRouter(tags=["Article CRUD"])
 
 
 @router.get("", response_model=List[ArticleInDB])
-def article_list_controller():
-    result = article_list()
+def article_list_controller(sort: str = None):
+    query = {
+        "sort": sort
+    }
+    result = article_list(query)
     return result
 
 
