@@ -2,9 +2,9 @@ from typing import List
 
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
+
 from article.db_helpers import article_list, article_create, article_detail, article_update, article_delete
 from article.models import ArticleIn, ArticleInDB, ArticleUpdateIn
-
 
 router = APIRouter(tags=["Article CRUD"])
 
@@ -14,8 +14,7 @@ def article_list_controller(sort: str = None):
     query = {
         "sort": sort
     }
-    result = article_list(query)
-    return result
+    return article_list(query)
 
 
 @router.post("", response_model=ArticleInDB, status_code=201)

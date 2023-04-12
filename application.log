@@ -1,2 +1,7 @@
 WARNING 2023-01-21 17:39:18,665 validate_access_token; Not enough segments
 WARNING 2023-01-21 17:44:15,395 validate_access_token; Not enough segments
+WARNING 2023-04-13 21:42:09,214 Failed login attempt from user string; error=Invalid user credentials
+WARNING 2023-04-13 21:42:29,816 Failed login attempt from user string; error=Invalid user credentials
+WARNING 2023-04-13 21:42:43,692 Failed login attempt from user string; error=Invalid user credentials
+WARNING 2023-04-13 21:43:18,875 Failed login attempt from user dipak.niroula@gmail.com; error=Invalid user credentials
+WARNING 2023-04-13 21:44:52,543 Successful login from user admin@gmail.com

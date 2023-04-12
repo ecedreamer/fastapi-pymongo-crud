@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Request
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordBearer
 
@@ -25,7 +25,7 @@ def register(profile_data: UserProfileForm):
 
 
 @router.post("/login")
-def login(credentials: LoginForm):
+async def login(credentials: LoginForm):
     resp = authenticate_user(credentials.dict())
     if resp.get("status") == "failure":
         logger.warning(f"Failed login attempt from user {credentials.email}; error={resp.get('message')}")

@@ -1,3 +1,5 @@
+from typing import Literal, Dict
+
 from fastapi.logger import logger
 from fastapi import Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -10,12 +12,12 @@ auth_scheme = HTTPBearer()
 
 def login_required(auth_header: HTTPAuthorizationCredentials = Depends(auth_scheme)) -> dict:
     if auth_header.scheme != "Bearer":
-        logger.warning(f"login_required; Authentication failed")
+        logger.warning("login_required; Authentication failed")
         return {"status": "failure", "message": "Invalid access token"}
     payload = validate_access_token(auth_header.credentials)
     if not payload:
         return {"status": "failure", "message": "Invalid access token"}
-    user = user_exists(payload.get("email"), status="active")
+    user: Dict | bool = user_exists(payload.get("email"), status="active")
     if not user:
         return {"status": "failure", "message": "Invalid access token"}
     if user.get("password") != payload.get("password"):
