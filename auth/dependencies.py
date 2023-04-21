@@ -20,8 +20,6 @@ def login_required(auth_header: HTTPAuthorizationCredentials = Depends(auth_sche
     user: Dict | bool = user_exists(payload.get("email"), status="active")
     if not user:
         return {"status": "failure", "message": "Invalid access token"}
-    if user.get("password") != payload.get("password"):
-        return {"status": "failure", "message": "Credentials changed"}
     del user["password"]
     return {"status": "success", "user": user}
 

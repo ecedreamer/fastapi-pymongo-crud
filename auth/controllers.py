@@ -31,8 +31,8 @@ async def login(credentials: LoginForm):
         logger.warning(f"Failed login attempt from user {credentials.email}; error={resp.get('message')}")
         return JSONResponse(resp, status_code=401)
     user = resp.get("user")
-    access_token = create_access_token(user)
     del user["password"]
+    access_token = create_access_token(user)
     logger.warning(f"Successful login from user {credentials.email}")
     return JSONResponse({"access_token": access_token, "user": user}, status_code=200)
 

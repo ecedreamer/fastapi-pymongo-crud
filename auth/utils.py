@@ -1,3 +1,4 @@
+import base64
 from datetime import datetime, timedelta, timezone
 from fastapi.logger import logger
 from passlib.context import CryptContext
@@ -28,7 +29,7 @@ def create_access_token(data: dict):
 
 def validate_access_token(token):
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        payload = jwt.decode(token, SECRET_KEY, algorithms=ALGORITHM)
     except Exception as e:
         logger.warning(f"validate_access_token; {e}")
         return {}
