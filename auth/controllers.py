@@ -17,7 +17,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 
 @router.post("/register")
-def register(profile_data: UserProfileForm):
+async def register(profile_data: UserProfileForm):
     created_profile = profile_create(profile_data.dict())
     if created_profile.get("status") == "failure":
         return JSONResponse(created_profile, status_code=400)

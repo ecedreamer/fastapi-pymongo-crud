@@ -10,7 +10,7 @@ router = APIRouter(tags=["Article CRUD"])
 
 
 @router.get("", response_model=List[ArticleInDB])
-def article_list_controller(sort: str = None):
+async def article_list_controller(sort: str = None):
     query = {
         "sort": sort
     }

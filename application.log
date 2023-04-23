@@ -1,13 +1,3 @@
-WARNING 2023-01-21 17:39:18,665 validate_access_token; Not enough segments
-WARNING 2023-01-21 17:44:15,395 validate_access_token; Not enough segments
-WARNING 2023-04-13 21:42:09,214 Failed login attempt from user string; error=Invalid user credentials
-WARNING 2023-04-13 21:42:29,816 Failed login attempt from user string; error=Invalid user credentials
-WARNING 2023-04-13 21:42:43,692 Failed login attempt from user string; error=Invalid user credentials
-WARNING 2023-04-13 21:43:18,875 Failed login attempt from user dipak.niroula@gmail.com; error=Invalid user credentials
-WARNING 2023-04-13 21:44:52,543 Successful login from user admin@gmail.com
-WARNING 2023-04-20 20:44:01,636 Failed login attempt from user admin; error=Invalid user credentials
-WARNING 2023-04-20 20:44:10,552 Successful login from user admin@gmail.com
-WARNING 2023-04-21 20:37:09,940 Failed login attempt from user admin; error=Invalid user credentials
-WARNING 2023-04-21 20:37:46,306 Successful login from user admin@gmail.com
-WARNING 2023-04-21 21:08:09,909 Failed login attempt from user string; error=Invalid user credentials
-WARNING 2023-04-21 21:08:19,759 Successful login from user admin@gmail.com
+WARNING 2023-04-23 17:41:49,448 Successful login from user admin@gmail.com
+WARNING 2023-04-23 17:41:57,333 Failed login attempt from user admin@gmail.com; error=Invalid user credentials
+WARNING 2023-04-23 17:42:07,785 Successful login from user admin@gmail.com
