@@ -1,9 +1,8 @@
-import base64
 from datetime import datetime, timedelta, timezone
-from fastapi.logger import logger
-from passlib.context import CryptContext
-from jose import jwt
 
+from fastapi.logger import logger
+from jose import jwt
+from passlib.context import CryptContext
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 

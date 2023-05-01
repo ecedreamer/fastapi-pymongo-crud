@@ -3,9 +3,10 @@ from typing import Dict, Any
 
 from bson.objectid import ObjectId
 
-from main.db_config import collections
+from main.db_config import get_collections
 
-ArticleCollection = collections.get("articles")
+
+ArticleCollection = get_collections("articles")
 
 
 def article_helper(article: Dict[str, Any]) -> Dict[str, str]:
@@ -30,7 +31,7 @@ def article_create(article_in):
 
 def article_detail(object_id):
     article = ArticleCollection.find_one({"_id": ObjectId(object_id)})
-    return article_helper(article)
+    return article_helper(article) if article else None
 
 
 def article_update(object_id: str, data):

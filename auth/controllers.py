@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Request
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordBearer
 
-from main.logger import logging
+from main.logger import logger
 from auth.db_helpers import profile_create, authenticate_user
 from auth.dependencies import employee_required
 from auth.models import UserProfileForm, LoginForm
@@ -10,8 +10,6 @@ from auth.utils import create_access_token
 
 router = APIRouter(tags=["User Auth"])
 
-
-logger = logging.getLogger("auth")
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 

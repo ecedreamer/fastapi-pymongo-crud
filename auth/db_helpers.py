@@ -1,9 +1,9 @@
 from auth.utils import get_password_hash, verify_password
-from main.db_config import collections
+from main.db_config import get_collections
 
 
-UserCollection = collections.get("users")
-ProfileCollection = collections.get("user_profiles")
+UserCollection = get_collections("users")
+ProfileCollection = get_collections("user_profiles")
 
 
 def user_helper(user, del_password=False) -> dict:
